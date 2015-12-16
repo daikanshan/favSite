@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>后台登陆</title>
+  <%= stylesheet_link_tag    'admin/session', media: 'all' %>
+  <%= javascript_include_tag 'admin/session' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="header">
+
+  </div>
+
+  <div class="mainer ">
+    <h2>后台登陆</h2>
+    <div class="login_panel">
+      <%= form_tag admin_login_path do %>
+        <div class="form-group">
+          <%= label_tag "username", "用户名" %><br>
+          <%= text_field_tag :username,'', class:"form-control" %>
+        </div>
+        <div class="form-group">
+          <%= label_tag "password", "密码" %><br>
+          <%= password_field_tag :password ,'', class:"form-control" %>
+        </div>
+        <div class="form-group">
+          <%= label_tag "vcode", "验证码" %><br>
+          <%= rucaptcha_input_tag(class: 'form-control', placeholder: '请输入验证码') %>
+          <%= rucaptcha_image_tag(alt: 'Captcha',id:"vcode") %>
+        </div>
+        <div class="form-group">
+          <%= submit_tag "登录",class:"btn btn-block btn-default" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="footer">
+
+  </div>
+
+  <%= javascript_include_tag params[:controller] %>
+</body>
+</html>

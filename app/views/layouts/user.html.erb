@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FavSites</title>
+  <%= stylesheet_link_tag    'user', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'user', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div class="header">
+    <%= render 'shared/user_header' %>
+  </div>
+
+  <div class="container">
+    <div class="side-part">
+      <%= render 'shared/user_nav' %>
+    </div>
+    <div class="content-part">
+      <%= yield %>
+    </div>
+  </div>
+
+  <div class="footer">
+    <%= render 'shared/user_footer' %>
+  </div>
+
+</body>
+</html>
