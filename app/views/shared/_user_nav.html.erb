@@ -1,0 +1,11 @@
+<nav class="">
+  <header>
+    <ul class="nav">
+      <ul>
+        <% @categories.each do |category| %>
+          <li><%= link_to category.name,root_url+"##{category.name}" %></li>
+        <% end %>
+      </ul>
+    </ul>
+  </header>
+</nav>

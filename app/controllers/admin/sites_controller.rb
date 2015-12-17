@@ -15,10 +15,12 @@ class Admin::SitesController < AdminController
   # GET /admin/sites/new
   def new
     @admin_site = Admin::Site.new
+    @categories = Admin::Category.all
   end
 
   # GET /admin/sites/1/edit
   def edit
+    @categories = Admin::Category.all
   end
 
   # POST /admin/sites
@@ -86,6 +88,6 @@ class Admin::SitesController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_site_params
-      params.require(:admin_site).permit(:name, :url, :avatar, :weight)
+      params.require(:admin_site).permit(:name, :url, :avatar,:category_id, :weight, :user_id)
     end
 end

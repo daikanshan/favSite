@@ -10,7 +10,9 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="sr-only">
+    <%= f.text_field :user_id,value:session[:user_id] %>
+  </div>
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>

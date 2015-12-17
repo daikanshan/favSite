@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
 Admin::User.create(username:"admin",password:"rootroot",password_confirmation:"rootroot")
 (1..3).each do |member|
   Admin::Category.create(name:"category#{member}",weight:member,user_id:1)

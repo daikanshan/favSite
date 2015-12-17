@@ -1,6 +1,11 @@
 class AdminController < ApplicationController
   before_action :check_login
 
+  def login_user
+    admin =  Admin::User.find_by_id(session[:user_id])
+    return admin if !admin.nil?
+    nil
+  end
   private
   def check_login
     if session[:user_id].nil?

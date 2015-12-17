@@ -2,7 +2,9 @@ class Admin::SessionController < AdminController
   skip_before_action :check_login
   layout false
   def new
-
+    if session[:user_id]
+      redirect_to admin_path
+    end
   end
 
   def create

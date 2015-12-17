@@ -85,6 +85,6 @@ class Admin::CategoriesController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_category_params
-      params.require(:admin_category).permit(:name, :weight)
+      params.require(:admin_category).permit(:name, :weight,:user_id)
     end
 end

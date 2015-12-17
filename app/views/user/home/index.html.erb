@@ -1,2 +1,7 @@
-<h1>User::Home#index</h1>
-<p>Find me in app/views/user/home/index.html.erb</p>
+<h1>站点收藏</h1>
+<% @categories.each do |category| %>
+  <a name="<%= category.name %>"><h1><%= category.name %></h1></a>
+  <% @sites[category.id].each do |site| %>
+    <%= link_to site.name %>
+  <% end %>
+<% end %>

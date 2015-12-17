@@ -1,6 +1,45 @@
-// Place all the styles related to the user controller here.
+// Place all the styles related to the admin controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'flat-ui';
+
+.container{
+  height:auto;
+  margin-top: 0;
+  .side-part{
+    background-color: #ECF0F1;
+    float:left;
+    position:fixed;
+    width: 25%;
+    margin-right: 5%;
+    ul{
+      padding-left: 0;
+      list-style: none;
+      li{
+        text-align: center;
+        display: block;
+        height:38px;
+        :hover{
+          background-color: rgb(223, 183, 242);
+        }
+        a{
+          line-height: 38px;
+          display: block;
+        }
+      }
+    }
+  }
+  .content-part{
+    float:right;
+    width:70%;
+    a{
+      line-height: 38px;
+      display: block;
+    }
+  }
+}
+.footer{
+  text-align: center;
+}
