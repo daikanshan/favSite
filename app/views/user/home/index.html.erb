@@ -2,6 +2,6 @@
 <% @categories.each do |category| %>
   <a name="<%= category.name %>"><h1><%= category.name %></h1></a>
   <% @sites[category.id].each do |site| %>
-    <%= link_to site.name %>
+    <%= link_to site.name,url_for(site.url),target:"_blank" %>
   <% end %>
 <% end %>
