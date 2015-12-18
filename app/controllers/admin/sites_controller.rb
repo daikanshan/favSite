@@ -16,11 +16,14 @@ class Admin::SitesController < AdminController
   def new
     @admin_site = Admin::Site.new
     @categories = Admin::Category.all
+
   end
 
   # GET /admin/sites/1/edit
   def edit
     @categories = Admin::Category.all
+    @current_category_id = @admin_site.category.id
+
   end
 
   # POST /admin/sites

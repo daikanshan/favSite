@@ -1,11 +1,15 @@
 <nav class="">
   <header>
     <ul class="nav">
-      <ul>
+        <% count = 0 %>
         <% @categories.each do |category| %>
-          <li><%= link_to category.name,root_url+"##{category.name}" %></li>
+          <li>
+            <div class="category"  value="<%= count %>">
+              <%= category.name %>
+            </div>
+          </li>
+          <% count+=1 %>
         <% end %>
-      </ul>
     </ul>
   </header>
 </nav>

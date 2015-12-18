@@ -447,6 +447,9 @@
 		self.prev = function() {
 			return self.animate(self.current - 1, 'prev');
 		};
+		self.move = function(to) {
+			return self.animate(to);
+		};
 
 
 		//  Our default animation method, the old-school left-to-right

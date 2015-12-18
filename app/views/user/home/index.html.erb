@@ -1,7 +1,18 @@
-<h1>站点收藏</h1>
-<% @categories.each do |category| %>
-  <a name="<%= category.name %>"><h1><%= category.name %></h1></a>
-  <% @sites[category.id].each do |site| %>
-    <%= link_to site.name,url_for(site.url),target:"_blank" %>
-  <% end %>
-<% end %>
+<div class="banner-outer">
+  <div class="banner">
+      <ul>
+          <% @categories.each do |category| %>
+          <li>
+            <div class="sites">
+              <h1><%= category.name %></h1>
+              <% @sites[category.id].each do |site| %>
+                <div class="site">
+                  <%= link_to site.name,url_for(site.url),target:"_blank" %>
+                </div>
+              <% end %>
+            </div>
+          </li>
+          <% end %>
+      </ul>
+  </div>
+</div>

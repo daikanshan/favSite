@@ -1,16 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>名称:</strong>
   <%= @admin_site.name %>
 </p>
 
 <p>
-  <strong>Url:</strong>
+  <strong>地址:</strong>
   <%= @admin_site.url %>
 </p>
 
 <p>
+  <strong>类别:</strong>
+  <%= @admin_site.category.name %>
+</p>
+
+<!-- <p>
   <strong>Avatar:</strong>
   <%= @admin_site.avatar %>
 </p>
@@ -18,7 +23,7 @@
 <p>
   <strong>Weight:</strong>
   <%= @admin_site.weight %>
-</p>
+</p> -->
 
-<%= link_to 'Edit', edit_admin_site_path(@admin_site) %> |
-<%= link_to 'Back', admin_sites_path %>
+<%= link_to '编辑', edit_admin_site_path(@admin_site) %> |
+<%= link_to '返回', admin_sites_path %>

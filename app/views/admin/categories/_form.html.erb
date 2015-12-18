@@ -13,15 +13,15 @@
   <div class="sr-only">
     <%= f.text_field :user_id,value:session[:user_id] %>
   </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label "名称" %><br>
+    <%= f.text_field :name,class:"form-control" %>
   </div>
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :weight %><br>
     <%= f.number_field :weight %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  </div> -->
+  <div class="form-group">
+    <%= f.submit "提交",class:"form-control" %>
   </div>
 <% end %>
