@@ -8,8 +8,12 @@
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse-01">
       <ul class="nav navbar-nav">
-        <!-- <li><a href="/#two">两轮电动车</a></li> -->
-        <!-- <li><a href="/#three">三轮电动车</a></li> -->
+        <% count = 0 %>
+        <% @categories.each do |category| %>
+          <li><a class="category-option" value="<%= count %>"><%= category.name %></a></li>
+          <% count+=1 %>
+        <% end %>
+        <li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if session[:user_id].nil? %>

@@ -13,7 +13,7 @@ $(document).ready(function(){
   });
   data = slider.data('unslider');
 
-  $('.category').each(function(){
+  $('.category-option').each(function(){
     $(this).on('click',function(){
       data.move($(this).attr("value"));
     });
