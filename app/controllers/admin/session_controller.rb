@@ -8,12 +8,13 @@ class Admin::SessionController < AdminController
   end
 
   def create
-    prms = params.permit(:username, :password)
+    prms = params.permit(:username, :password, :modal)
     admin = Admin::User.find_by_username(prms[:username])
     if admin && verify_rucaptcha?(admin)
       session[:user_id] = admin.id
       session[:username] = admin.username
-      redirect_to admin_path
+      redirect_to admin_path if prms[:modal].nil?
+      redirect_to root_path
     else
       redirect_to admin_login_path
     end
