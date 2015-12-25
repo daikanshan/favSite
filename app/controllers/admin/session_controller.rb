@@ -13,10 +13,17 @@ class Admin::SessionController < AdminController
     if admin && verify_rucaptcha?(admin)
       session[:user_id] = admin.id
       session[:username] = admin.username
-      redirect_to admin_path if prms[:modal].nil?
-      redirect_to root_path
+      if !prms[:modal].nil?
+        redirect_to root_path
+      else
+        redirect_to admin_login_path
+      end
     else
-      redirect_to admin_login_path
+      if !prms[:modal].nil?
+        redirect_to root_path
+      else
+        redirect_to admin_login_path
+      end
     end
   end
 
