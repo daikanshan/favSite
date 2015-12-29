@@ -4,7 +4,7 @@ class Admin::SitesController < AdminController
   # GET /admin/sites
   # GET /admin/sites.json
   def index
-    @admin_sites = Admin::Site.all
+    @admin_sites = login_user.sites
   end
 
   # GET /admin/sites/1
@@ -15,7 +15,7 @@ class Admin::SitesController < AdminController
   # GET /admin/sites/new
   def new
     @admin_site = Admin::Site.new
-    @categories = Admin::Category.all
+    @categories = login_user.categories
 
   end
 

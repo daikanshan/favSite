@@ -4,7 +4,7 @@ class Admin::CategoriesController < AdminController
   # GET /admin/categories
   # GET /admin/categories.json
   def index
-    @admin_categories = Admin::Category.all
+    @admin_categories = login_user.categories
   end
 
   # GET /admin/categories/1
