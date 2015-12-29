@@ -7,7 +7,10 @@
               <h1><%= category.name %></h1>
               <% @sites[category.id].each do |site| %>
                 <div class="site">
-                  <%= link_to site.name,url_for(site.url),target:"_blank" %>
+                  <a href=<%= url_for(site.url)%> target="_blank">
+                    <%= image_tag "http://www.google.com/profiles/c/favicons?domain=#{site.url}" %>
+                    <%= site.name %>
+                  </a>
                 </div>
               <% end %>
             </div>

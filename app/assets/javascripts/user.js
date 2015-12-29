@@ -18,4 +18,8 @@ $(document).ready(function(){
       data.move($(this).attr("value"));
     });
   })
+  $("#vcode").click(function(){
+    currentSrc = $(this).attr('src');
+    $(this).attr('src', currentSrc.split('?')[0] + '?' + (new Date()).getTime());
+  })
 })
